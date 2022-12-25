@@ -10,6 +10,7 @@
     <label>Point 2: <input type="number" id="point2"></label><br>
   </form>
   <button onclick="calculateDistance()">Calculate Distance</button>
+  <p>Angle: <span id="angle"></span></p>
   <p id="result"></p>
   <script>
     function calculateDistance() {
@@ -25,6 +26,9 @@
 
         // Calculate the angle between the points using the alpha value
         var angle = alpha;
+
+        // Display the angle value
+        document.getElementById('angle').innerHTML = angle + ' degrees';
 
         // Use the Law of Cosines to calculate the distance between the points
         var distance = Math.sqrt(Math.pow(distance1, 2) + Math.pow(distance2, 2) - 2 * distance1 * distance2 * Math.cos(angle));
